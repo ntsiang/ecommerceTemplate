@@ -1,19 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isCartOpen: false,
   cart: [],
   items: [],
-}
+};
 
 export const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     setItems: (state, action) => {
       state.items = action.payload;
     },
-    // Need to watch for duplicate items
+
     addToCart: (state, action) => {
       state.cart = [...state.cart, action.payload.item];
     },
@@ -40,7 +40,7 @@ export const cartSlice = createSlice({
       });
     },
 
-    setIsCartOpen: (state, action) => {
+    setIsCartOpen: (state) => {
       state.isCartOpen = !state.isCartOpen;
     },
   },
