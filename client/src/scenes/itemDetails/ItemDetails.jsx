@@ -33,10 +33,10 @@ const ItemDetails = () => {
     const itemJson = await item.json();
     setItem(itemJson.data);
   }
-
+// Find related items by category
   async function getItems() {
     const items = await fetch(
-      `http://localhost:/api/items?populate=image`,
+      `http://localhost:1337/api/items?populate=image`,
       {
         method: "GET",
       }
